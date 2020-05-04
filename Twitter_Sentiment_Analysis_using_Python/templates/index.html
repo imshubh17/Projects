@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<main role="main" class="container">
+  <div class=" align-items-center p-3 my-3 bg-purple rounded shadow-sm">
+    <div class="lh-100">
+      <h6 class=" ">Result: {{ip}}</h6>
+      <small>Real Time Anaysis</small>
+    </div>
+  </div>
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+    <div class="lh-100">
+      <h6 class=" ">Positive Tweets</h6>
+    </div>
+<div id="overflowTest">
+{% for t in pt %}
+
+    <li>{{ t|e }} </li>
+
+{% endfor %}
+</div>
+</div>
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+    <div class="lh-100">
+      <h6 class=" ">Negative Tweets</h6>
+    </div>
+<div id="overflowTest">
+{% for t in nt %}
+
+    <li>{{ t|e }} </li>
+
+{% endfor %}
+    {{ d }}
+</div>
+</div>
+</main>
+<a href="/" class="btn btn-primary btn-lg active" role="button">--Back to main Page--</a>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+<main role="main" class="container">
+  <div class="jumbotron">
+<form action="/fatch" method="post">
+    <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">Query:</label>
+    <div class="col-sm-3">
+        <input type="text" class="form-control mx-sm-3" size="20" name="query">
+    </div>
+    </div>
+
+    <div class="form-group row">
+    <div class="col-sm-3">
+      <button type="submit" class="btn btn-primary">OUTPUT</button>
+    </div>
+    </div>
+
+</form>
+      </div>
+</main>
+
+{% endblock %}
