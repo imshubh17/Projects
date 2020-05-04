@@ -1,7 +1,7 @@
 TodoApp
 -----
 ### Introduction
-Todo app use to create task in different categoery and delete after completion.
+Todo app use to create task in different category and delete after completion.
 
 ### Overview
 
@@ -42,7 +42,7 @@ Our tech stack will include:
   ```
   in app.py file.
 
-3. Run the development server:
+3. migrate && upgrade database:
 
   ```
   You can then generate an initial migration
@@ -53,7 +53,7 @@ Our tech stack will include:
   ```
 4. insert data into todolist table.
 
-5. migrate && upgrade database:
+5. Run the development server:
   ```
   $ python app.py
   ```
