@@ -53,8 +53,8 @@ Our tech stack will include:
   ```
 ###Dashboard
 ![Home page](https://github.com/imshubh17/Projects/blob/master/images/tsa/input.PNG?raw=true "Main Page")
-![Home page](https://github.com/imshubh17/Projects/blob/master/images/tsa/dashboard.PNG?raw=true "Main Page")
-![Home page](https://github.com/imshubh17/Projects/blob/master/images/tsa/tweets.PNG?raw=true "Main Page")
+![Home page](https://github.com/imshubh17/Projects/blob/master/images/tsa/dashboard.PNG?raw=true "Dashboard")
+![Home page](https://github.com/imshubh17/Projects/blob/master/images/tsa/tweets.PNG?raw=true "Tweets")
 
 
 
