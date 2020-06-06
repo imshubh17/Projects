@@ -14,6 +14,7 @@ class Todo(db.Model):
   __tablename__ = 'todo'
   id = db.Column(db.Integer, primary_key=True)
   description = db.Column(db.String(), nullable=False)
+  ddate = db.Column(db.String(), nullable=True)
   completed = db.Column(db.Boolean, nullable=True, default=False)
   list_id = db.Column(db.Integer, db.ForeignKey('todolist.id'),nullable=False)
 
@@ -25,6 +26,9 @@ class TodoList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(), nullable=False)
     todos = db.relationship('Todo', backref='list',lazy=True)
+    
+    def __init__(self, name):
+        self.name = name 
 
 
 @app.route('/todos/create', methods=['POST'])
@@ -34,8 +38,9 @@ def create_todo():
     body = {}
     try:
         description = request.get_json()['description']
+        date = request.get_json()['ddate']
         list_id = request.get_json()['list_id']
-        todo = Todo(description=description)
+        todo = Todo(description=description , ddate= date)
         active_list = TodoList.query.get(list_id)
         todo.list = active_list
         db.session.add(todo)

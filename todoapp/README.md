@@ -23,6 +23,7 @@ Our tech stack will include:
 
  ```sh
   ├── README.md
+  ├── category.py *** Before run app.py run this script
   ├── app.py *** the main driver of the app. Includes your SQLAlchemy models.
                     "python app.py" to run after installing dependences
   ├── requirements.txt *** The dependencies we need to install with "pip3 install -r requirements.txt"
@@ -42,32 +43,45 @@ Our tech stack will include:
   ```
   in app.py file.
 
-3. migrate && upgrade database:
+3. Run the development server:
 
   ```
+  Create Migration 
+    $  flask db init
+
   You can then generate an initial migration
     $ flask db migrate -m "Initial migration."
 
   Then you can apply the migration to the database:
     $ flask db upgrade
   ```
-4. insert data into todolist table.
+4. insert data into todolist table for Category.
+    ```
+    $ python category.py 
+    for Default Category and create own category change catname inside category.py then run
+    ```
 
-5. Run the development server:
+5. Run Application:
   ```
   $ python app.py
   ```
-![Home page](https://github.com/imshubh17/Projects/blob/master/images/todoapp.PNG?raw=true "TodoApp")
 
-#### Extra activity
-Install Flask-Migrate with pip:
-pip install Flask-Migrate
 
-With the above application you can create a migration repository with the following command:
-$ flask db init
+#### Deployment In Heroku
+*** Important "Procfile" file
+# Steps
+1. create account
+   https://id.heroku.com/login 
 
-You can then generate an initial migration
-$ flask db migrate -m "Initial migration."
+2. create application in heroku 
 
-Then you can apply the migration to the database:
-$ flask db upgrade
+4. Create database and click copy connection link and paste inside app.py for database connectivity
+
+3. Upload project in github 
+
+
+4. In heroku click on deployment inside application and select option  deploy with github then connect repo and deploy 
+
+5. Use commandline interface of heroku for migration and run category.py for default category
+
+6. finally Application will deploy click on URL and open application and Add your ToDo Task

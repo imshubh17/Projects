@@ -26,7 +26,7 @@
   <body>
     <div class="lists-wrapper">
     <p title="Catageory">Catageory List</p>
-      <ul id="lists">
+        <ul id="lists">
         {% for list in lists %}
         <li class="list-class">
           <a href="/lists/{{ list.id }}">
@@ -40,6 +40,8 @@
       <h4>Catageory: {{ active_list.name }}</h4>
       <form id="form">
         <input type="text" id="description" name="description" />
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="ddate" name="ddate">
         <input type="submit" value="Create" />
       </form>
       <div id="error" class="hidden">Something went wrong!</div>
@@ -49,6 +51,7 @@
           <input class="check-completed" data-id="{{ todo.id }}" type="checkbox" {% if todo.completed %} checked {% endif %} />
           {{ todo.description }}
           <button class="delete-button" data-id="{{ todo.id }}">&cross;</button>
+         <p style="color:#4C4C4C;font-weight:bold;font-family:Calibri">Due Date ->{{todo.ddate}}</p>
         </li>
         {% endfor %}
       </ul>
@@ -93,14 +96,18 @@
         }
       }
       const descInput = document.getElementById('description');
+      const ddate = document.getElementById('ddate');
       document.getElementById('form').onsubmit = function(e) {
         e.preventDefault();
         const desc = descInput.value;
         descInput.value = '';
+        const d = ddate.value;
+        ddate.value = '';
         fetch('/todos/create', {
           method: 'POST',
           body: JSON.stringify({
             'description': desc,
+            'ddate' : d,
             'list_id': {{ active_list.id }}
           }),
           headers: {
@@ -116,8 +123,9 @@
           checkbox.setAttribute('data-id', jsonResponse.id);
           li.appendChild(checkbox);
 
-          const text = document.createTextNode(' ' + jsonResponse.description);
+          const text = document.createTextNode(' ' + jsonResponse.description  +jsonResponse.ddate  );
           li.appendChild(text);
+         
 
           const deleteBtn = document.createElement('button');
           deleteBtn.className = 'delete-button';
