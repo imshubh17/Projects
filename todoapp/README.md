@@ -67,9 +67,9 @@ Our tech stack will include:
   ```
 
 
-#### Deployment In Heroku
+# Deployment In Heroku
 *** Important "Procfile" file
-# Steps
+#### Steps
 1. create account
    https://id.heroku.com/login 
 
