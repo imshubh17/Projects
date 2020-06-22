@@ -51,14 +51,14 @@ Our tech stack will include:
   ```
   $ python app.py
   ```
-###Dashboard
+### Dashboard
 ![Home page](https://github.com/imshubh17/Projects/blob/master/images/tsa/input.PNG?raw=true "Main Page")
 ![Home page](https://github.com/imshubh17/Projects/blob/master/images/tsa/dashboard.PNG?raw=true "Dashboard")
 ![Home page](https://github.com/imshubh17/Projects/blob/master/images/tsa/tweets.PNG?raw=true "Tweets")
 
 
 
-####We follow these 3 major steps in our program:
+#### We follow these 3 major steps in our program:
     Authorize twitter API client.
     Make a GET request to Twitter API to fetch tweets for a particular query.
     Parse the tweets. Classify each tweet as positive, negative or neutral.
